@@ -18,17 +18,25 @@ public class MagnifyingGlass : MonoBehaviour
             // if putting down, return item.
             returnItem();
         }
+        else
+        {
+            stitchesPos = stitchesRectTransform.position;
+            
+        }
+
+        
     }
 
     void returnItem()
     {
         rectTransform.position = placePos;
-        stitchesPos = stitchesRectTransform.position;
+        stitchesRectTransform.position = stitchesPos;
     }
     void Start()
     {
        rectTransform = GetComponent<RectTransform>(); 
        placePos = rectTransform.position;
+       stitchesPos = stitchesRectTransform.position;
     }
 
     // Update is called once per frame

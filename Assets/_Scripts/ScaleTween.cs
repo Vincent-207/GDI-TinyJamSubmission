@@ -9,6 +9,10 @@ public class ScaleTween : MonoBehaviour
     [SerializeField]
     AnimationCurve growCurve, lessenCurve;
     float currentTweenTime;
+    void Start()
+    {
+        currentTweenTime = tweenDuration;
+    }
     public void toggleZoom()
     {
         // if in tween, reset time correctly. 

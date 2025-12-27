@@ -29,8 +29,6 @@ public class ItemManager : MonoBehaviour
         Tween itemTween = itemRect.DOAnchorPos(outPos, fadeTime, false).SetEase(Ease.OutQuart);
         Tween clipBoardTween = clipBoardRect.DOAnchorPos(putInCornerScript.leavePos, fadeTime, false).SetEase(Ease.OutQuart);
 
-        // while(clipBoardTween.IsPlaying());
-        // 
         StartCoroutine(tweenNewItem(itemTween));
         StartCoroutine(tweenNewClipboard(clipBoardTween));
     }
@@ -68,6 +66,17 @@ public class ItemManager : MonoBehaviour
         currentItemRectTransform.anchoredPosition = itemEnterPos;
         currentItemRectTransform.DOAnchorPos(Vector2.zero, 1, false).SetEase(Ease.InCubic);
         itemRect = currentItemRectTransform;
+
+
+        // load data to clipboard.
+        ImportItem importItem = currentItem.GetComponent<ImportItem>();
+        if(importItem == null)
+        {
+            Debug.LogError("IMPORT ITEM COULDN't be found");
+            Debug.Break();
+        }
+
+        clipBoardRect.GetComponent<ClipBoard>().updateClipBoard(importItem);
     }
 
 }

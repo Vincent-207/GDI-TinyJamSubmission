@@ -150,7 +150,7 @@ GameObject:
   - component: {fileID: 2946805623568475523}
   - component: {fileID: 3796818245831766692}
   m_Layer: 5
-  m_Name: Actual Item
+  m_Name: Actual Item 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   clipboardInfo:
-    SerialNumber: 4
+    SerialNumber: 2
     stitchType: 1
   itemInfo:
     SerialNumber: 2

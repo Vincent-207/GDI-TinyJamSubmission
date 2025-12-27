@@ -5,9 +5,11 @@ using UnityEngine;
 public class ClipBoard : MonoBehaviour
 {
     [SerializeField] TMP_Text infoText;
+    ImportItem currentItem;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public void updateClipBoard(ClipboardInfo clipboardInfo)
+    public void updateClipBoard(ImportItem newItem)
     {
-        infoText.text = "Info\n" + clipboardInfo.toString();
+        currentItem = newItem;
+        infoText.text = "Info\n" + currentItem.clipboardInfo.toString();
     }
 }

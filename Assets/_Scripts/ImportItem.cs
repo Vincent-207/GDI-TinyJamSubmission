@@ -3,17 +3,16 @@ using UnityEngine;
 
 public class ImportItem : MonoBehaviour
 {
-    [SerializeField]
-    ClipboardInfo clipboardInfo;
+    public ClipboardInfo clipboardInfo;
     [SerializeField]
     ItemInfo itemInfo;
     public GameObject threadsImage;
     // DEBUG
-    public ClipBoard clipBoard;
+    // public ClipBoard clipBoard;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        clipBoard.updateClipBoard(clipboardInfo);
+        // DEBUG - clipBoard.updateClipBoard(clipboardInfo);
     }
 
     // Update is called once per frame

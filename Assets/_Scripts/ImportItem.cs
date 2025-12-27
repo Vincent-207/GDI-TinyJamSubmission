@@ -7,6 +7,7 @@ public class ImportItem : MonoBehaviour
     [SerializeField]
     ItemInfo itemInfo;
     public GameObject threadsImage;
+    public bool shouldBePassed;
     // DEBUG
     // public ClipBoard clipBoard;
     // Start is called once before the first execution of Update after the MonoBehaviour is created

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Linq;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 public class ItemManager : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -99,17 +100,23 @@ public class ItemManager : MonoBehaviour
         {
             // GAME OVER - Didn't meet quota. 
             Debug.Log("Didn't meet quota.");
+            SceneManager.LoadScene(2);
+            return;
         }
         else if(CompareChoices() == false)
         {
             Debug.Log("GAME OVER. selected wrong!");
+            SceneManager.LoadScene(2);
+            return;
         }
         else
         {
             Debug.Log("You WON!");
+            SceneManager.LoadScene(3);
+            return;
         }
     
-        Debug.Break();
+        // Debug.Break();
     }
     bool CompareChoices()
     {

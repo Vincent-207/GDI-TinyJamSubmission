@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5522101215279592140
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8441966569097119929}
+  - component: {fileID: 2536347910705861636}
+  m_Layer: 0
+  m_Name: Gen prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8441966569097119929
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5522101215279592140}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2536347910705861636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5522101215279592140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5dde270a72ed6a4894684747c40ad87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  canvas: {fileID: 0}
+  shirtPrefab: {fileID: 5086302147128678174, guid: 2e1289a870a89d94a8d7ce1803b184ed, type: 3}
+  shirtPool:
+  - {fileID: 5649833981081900385, guid: 524a00dabd7c00f43bd89fb4be5c94d9, type: 3}
+  - {fileID: 4449110186165696026, guid: fa7713789159b7b41a86cb401b492b50, type: 3}
+  - {fileID: -4505398566283272500, guid: 9d35f03e7a3cf33458992d10531cb77b, type: 3}
+  stitchPool:
+  - {fileID: -6855396914178926112, guid: 9755ff2860cc8c042bc3f8dce16797a1, type: 3}
+  - {fileID: 7503213388338214923, guid: ff2d16d8bdda7ff4ca8e4fea2a4c9f7a, type: 3}
+  - {fileID: 7728690580490254822, guid: 45509b97003febf4fbfbc10afb0a3520, type: 3}
+  clipboardInfo:
+    SerialNumber: 0
+    stitchType: 0
+  itemInfo:
+    SerialNumber: 0
+    stitchType: 0
+  shouldBePassedPercent: 0.49
+  generatedIsPassable: 0

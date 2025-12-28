@@ -9,7 +9,7 @@ using System.Collections.Generic;
 public class ItemManager : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public GameObject[] ItemPool;
+    
     public GameObject[] ItemQueue;
     public bool[] correctChoices;
     public GameObject currentItem;
@@ -22,7 +22,7 @@ public class ItemManager : MonoBehaviour
     public float fadeTime = 1;
     
     public Transform magnifyingGlassTransform;
-
+    public Transform magnifiyingGlassHandle;
     public TMP_Text quotaTMP_Text;
 
     public List<bool> choices;
@@ -31,6 +31,7 @@ public class ItemManager : MonoBehaviour
     public float roundTimerDuration;
     public float currentRoundTimerDuration;
     public TMP_Text timerTMP_Text;
+    public ShirtPrefabGen shirtPrefabGen;
     void Start()
     {
         currentRoundTimerDuration = roundTimerDuration;
@@ -39,7 +40,7 @@ public class ItemManager : MonoBehaviour
         ItemQueue = new GameObject[quotaRequirment];
         for(int i = 0; i < quotaRequirment; i++)
         {
-            ItemQueue[i] = ItemPool[Random.Range(0, quotaRequirment)];
+            ItemQueue[i] = shirtPrefabGen.Generate();
             correctChoices[i] = ItemQueue[i].GetComponent<ImportItem>().shouldBePassed;
         }
         
@@ -55,6 +56,7 @@ public class ItemManager : MonoBehaviour
 
         StartCoroutine(tweenNewItem(itemTween));
         StartCoroutine(tweenNewClipboard(clipBoardTween));
+        magnifiyingGlassHandle.SetAsLastSibling();
     }
 
     void Update()
@@ -152,8 +154,11 @@ public class ItemManager : MonoBehaviour
         }
 
         // handle old Items
-        
-        Destroy(itemRect.gameObject);
+        if(itemRect != null)
+        {
+            Destroy(itemRect.gameObject);
+            
+        }
         // Debug.Log("Done!");
 
 
@@ -163,7 +168,6 @@ public class ItemManager : MonoBehaviour
         currentItemRectTransform.anchoredPosition = itemEnterPos;
         Tween newItemTween = currentItemRectTransform.DOAnchorPos(Vector2.zero, 1, false).SetEase(Ease.InCubic);
         itemRect = currentItemRectTransform;
-        magnifyingGlassTransform.SetAsLastSibling();
 
 
 
@@ -171,17 +175,24 @@ public class ItemManager : MonoBehaviour
         // load data to clipboard.
         ImportItem importItem = currentItem.GetComponent<ImportItem>();
         loadData(importItem);
+        
+        
+        Image threadsImage = importItem.threadsImage.GetComponent<Image>();
+        threadsImage.enabled = false;
+        // Debug.Break();
 
         while(newItemTween.IsPlaying())
         {
             yield return null;
         }
 
-        Image threadsImage = importItem.threadsImage.GetComponent<Image>();
+        threadsImage.enabled = true;
+        
         threadsImage.transform.SetParent(magnifyingGlassTransform, true);
         StaticChild threadsStaticChild = threadsImage.GetComponent<StaticChild>();
         threadsStaticChild.position = threadsImage.transform.position;
         threadsStaticChild.DoUpdate = true;
+        magnifiyingGlassHandle.SetAsLastSibling();
     }
 
     void loadData(ImportItem importItem)

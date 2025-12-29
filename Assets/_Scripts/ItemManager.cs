@@ -36,6 +36,7 @@ public class ItemManager : MonoBehaviour
     public JuicySoundPlayer clipboardPageSoundPlayer, wooshSound;
     void Start()
     {
+        quotaRequirment = DifficultyManager.Quota;
         currentRoundTimerDuration = roundTimerDuration;
         choices = new List<bool>();
         correctChoices = new bool[quotaRequirment];
@@ -97,6 +98,7 @@ public class ItemManager : MonoBehaviour
 
     void EndRound()
     {
+        Debug.Break();
         if(choices.Count < quotaRequirment)
         {
             // GAME OVER - Didn't meet quota. 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 81389d15a987d4f43ac51a4bdfd21200
+guid: b7d906a7508098a41af1c19b0fed7fc1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7673595411333208751
-    second: button_square_border_0
+      213: -8151007436313268867
+    second: caixa_cheia5 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: button_square_border_0
+      name: caixa_cheia5 1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 64
+        x: 59
+        y: 19
+        width: 542
+        height: 522
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 8, y: 8, z: 8, w: 8}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: faa5592ce561e7a60800000000000000
-      internalID: 7673595411333208751
+      spriteID: d7deafc2cedc1ee80800000000000000
+      internalID: -8151007436313268867
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5fbf028745e75414bb25f5eb6031044d
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      button_square_border_0: 7673595411333208751
+      caixa_cheia5 1_0: -8151007436313268867
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

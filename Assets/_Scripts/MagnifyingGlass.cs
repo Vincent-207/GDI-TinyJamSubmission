@@ -25,12 +25,12 @@ public class MagnifyingGlass : MonoBehaviour
 
     void returnItem()
     {
-        rectTransform.position = placePos;
+        rectTransform.anchoredPosition = placePos;
     }
     void Start()
     {
        rectTransform = GetComponent<RectTransform>(); 
-       placePos = rectTransform.position;
+       placePos = rectTransform.anchoredPosition;
     }
 
     // Update is called once per frame

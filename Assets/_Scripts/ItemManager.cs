@@ -33,6 +33,7 @@ public class ItemManager : MonoBehaviour
     public float currentRoundTimerDuration;
     public TMP_Text timerTMP_Text;
     public ShirtPrefabGen shirtPrefabGen;
+    public JuicySoundPlayer clipboardPageSoundPlayer, wooshSound;
     void Start()
     {
         currentRoundTimerDuration = roundTimerDuration;
@@ -134,6 +135,7 @@ public class ItemManager : MonoBehaviour
     IEnumerator tweenNewClipboard(Tween clipboardTween)
     {
         putInCornerScript.updatePosition = false;
+
         // yield return new WaitForSeconds(1);
         DestroyAllChildren(magnifyingGlassTransform);
         while(clipboardTween.IsPlaying())
@@ -142,7 +144,7 @@ public class ItemManager : MonoBehaviour
         }
         // Debug.Break(); 
         clipBoardRect.anchoredPosition = clipboardLeavePos;
-        
+        clipboardPageSoundPlayer.PlayClip();
         Tween clipboardEnterTween = clipBoardRect.DOAnchorPos(putInCornerScript.enterPos, 1, false).SetEase(Ease.OutCubic);
         while(clipboardEnterTween.IsPlaying())
         {
@@ -182,7 +184,7 @@ public class ItemManager : MonoBehaviour
         // load data to clipboard.
         ImportItem importItem = currentItem.GetComponent<ImportItem>();
         loadData(importItem);
-        
+        wooshSound.PlayClip();
         
         Image threadsImage = importItem.threadsImage.GetComponent<Image>();
         threadsImage.enabled = false;
